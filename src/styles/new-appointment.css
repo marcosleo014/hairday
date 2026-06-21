@@ -1,0 +1,172 @@
+.new-appointment {
+    padding: 80px;
+    border-radius: 12px;
+    width: 498px;
+    height: fit-content;
+    background-color: var(--gray-700);
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    header {
+        h2 {
+            font: var(--title-lg);
+            color: var(--gray-100);
+            margin-bottom: 4px;
+        }
+
+        p {
+            font: var(--text-sm);
+            color: var(--gray-300);
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .label {
+            font: var(--title-md);
+            color: var(--gray-200);
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        div:has(input[type="text"]),
+        div:has(input[type="date"]) {
+            position: relative;
+
+            input {
+                width: 100%;
+                padding-block: 12px;
+                padding-left: 40px;
+                background-color: inherit;
+                border-radius: 8px;
+                border: 1px solid var(--gray-500);
+                font: var(--text-md);
+                color: var(--gray-200);
+
+                &:hover {
+                    border: 1px solid var(--yellow-dark);
+                    outline: none;
+                }
+
+                &:focus {
+                    border: 1px solid var(--yellow-dark);
+                    outline: 1px solid var(--yellow-dark);
+                }
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        input[type="date"] {
+            &::-webkit-calendar-picker-indicator {
+                background-image: url(../assets/icons/caretDown.svg);
+                margin-right: 12px;
+                cursor: pointer;
+            }
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        fieldset>div {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            section {
+                h3 {
+                    font: var(--text-sm);
+                    color: var(--gray-300);
+                }
+
+                &>div {
+                    display: flex;
+                    gap: 8px;
+                    flex-wrap: wrap;
+
+                    label {
+                        user-select: none;
+                        position: relative;
+                        cursor: pointer;
+                        display: inline-block;
+                        width: 78.5px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--gray-600);
+                        border-radius: 8px;
+                        border: 1px solid var(--gray-500);
+
+                        &:hover {
+                            background-color: var(--gray-500);
+                        }
+
+                        &:has(input:checked) {
+                            color: var(--yellow);
+                            border-color: var(--yellow);
+                        }
+
+                        &:has(input:disabled) {
+                            background-color: transparent;
+                            color: var(--gray-500);
+                            border-color: var(--gray-600);
+                            cursor: auto;
+                        }
+
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                            left: 0;
+                            top: 0;
+                            cursor: pointer;
+                            &:disabled {
+                                cursor: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        input[type="submit"] {
+            padding-block: 18px;
+            color: var(--gray-900);
+            font: var(--title-sm);
+            background-color: var(--yellow);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            
+            &:hover {
+                outline: 2px solid var(--yellow-light);
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                outline: none;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+@media (width < 1280px) {
+    .new-appointment {
+        padding: 40px;    
+        width: 350px;
+    }
+}

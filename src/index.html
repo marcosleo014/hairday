@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HairDay</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="scripts/main.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>
+        <img src="assets/logo.svg" alt="">
+    </h1>
+
+    <main>
+
+        <section class="new-appointment">
+
+            <header>
+                <h2>
+                    Agende um atendimento
+                </h2>
+                <p>
+                    Selecione data, horário e informe o nome do clinete para criar o agendamento
+                </p>
+            </header>
+
+            <form action="#">
+                <div>
+                    <label for="appointment-date" class="label">
+                        Data
+                    </label>
+                    <div>
+                        <img src="assets/icons/calendar.svg" alt="">
+                        <input type="date" name="appointment-date" id="appointment-date" value="2026-06-21">
+                    </div>
+                </div>
+
+                <fieldset>
+                    <legend class="label">Horários</legend>
+                    <div>
+                        <section class="morning-hours">
+                            <h3>Manhã</h3>
+                            <div>
+                                <label for="appointment-hours-09-00">
+                                    09:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-09-00" value="09:00" disabled>
+                                </label>
+
+                                <label for="appointment-hours-10-00">
+                                    10:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-10-00" value="10:00">
+                                </label>
+
+                                <label for="appointment-hours-11-00">
+                                    11:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-11-00" value="11:00">
+                                </label>
+
+                                <label for="appointment-hours-12-00">
+                                    12:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-12-00" value="12:00">
+                                </label>
+                            </div>
+                        </section>
+                        <section>
+                            <h3>Tarde</h3>
+                            <div>
+                                <label for="appointment-hours-13-00">
+                                    13:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-13-00" value="13:00">
+                                </label>
+
+                                <label for="appointment-hours-14-00">
+                                    14:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-14-00" value="14:00" disabled>
+                                </label>
+
+                                <label for="appointment-hours-15-00">
+                                    15:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-15-00" value="15:00">
+                                </label>
+
+                                <label for="appointment-hours-16-00">
+                                    16:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-16-00" value="16:00" disabled>
+                                </label>
+
+                                <label for="appointment-hours-17-00">
+                                    17:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-17-00" value="17:00">
+                                </label>
+
+                                <label for="appointment-hours-18-00">
+                                    18:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-18-00" value="18:00">
+                                </label>
+                            </div>
+                        </section>
+                        <section>
+                            <h3>Noite</h3>
+                            <div>
+                                <label for="appointment-hours-19-00">
+                                    19:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-19-00" value="19:00">
+                                </label>
+
+                                <label for="appointment-hours-20-00">
+                                    20:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-20-00" value="20:00" disabled>
+                                </label>
+
+                                <label for="appointment-hours-21-00">
+                                    21:00
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-21-00" value="21:00">
+                                </label>
+                            </div>
+                        </section>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <label for="name-client" class="label">
+                        Cliente
+                    </label>
+                    <div>
+                        <img src="assets/icons/userSquare.svg" alt="">
+                        <input type="text" name="name-client" id="name-client" placeholder="Nome do cliente">
+                    </div>
+                </div>
+
+                <input type="submit" value="AGENDAR">
+            </form>
+        </section>
+
+        <section class="appointments">
+
+            <header>
+                <div class="title">
+                    <h2>
+                        Sua Agenda
+                    </h2>
+                    <p>
+                        Consulte os seus cortes de cabelo agendados por dia
+                    </p>
+                </div>
+
+                <div class="select">
+                    <img src="assets/icons/calendar.svg" alt="">
+                    <img src="assets/icons/caretDown.svg" alt="">
+                    <select name="date-select" id="date-select">
+                        <option value="2026-06-21">
+                            Dom - 21/06/2026
+                        </option>
+                    </select>
+                </div>
+            </header>
+
+            <div>
+                <article>
+                    <header>
+                        <img src="assets/icons/sunHorizon.svg" alt="">
+                        <h3>Manhã</h3>
+                        <p>
+                            09h-12h
+                        </p>
+                    </header>
+                    <ul>
+                        <li>
+                            <p>09:00</p>
+                            <p>Ryan Dorwart</p>
+                        </li>
+                    </ul>
+                </article>
+
+                <article>
+                    <header>
+                        <img src="assets/icons/cloudSun.svg" alt="">
+                        <h3>Tarde</h3>
+                        <p>
+                            13h-18h
+                        </p>
+                    </header>
+                    <ul>
+                        <li>
+                            <p>14:00</p>
+                            <p>Livia  Curtis</p>
+                        </li>
+                        <li>
+                            <p>16:00</p>
+                            <p>Robinho</p>
+                        </li>
+                    </ul>
+                </article>
+
+                <article>
+                    <header>
+                        <img src="assets/icons/moonStars.svg" alt="">
+                        <h3>Noite</h3>
+                        <p>
+                            19h-21h
+                        </p>
+                    </header>
+                    <ul>
+                        <li>
+                            <p>20:00</p>
+                            <p>Marcos Leonan</p>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

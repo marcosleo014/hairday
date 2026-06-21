@@ -1,0 +1,115 @@
+.appointments {
+    width: 906px;
+    padding: 80px 112px;
+    &>header {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 32px;
+        .title {
+            margin-right: auto;
+            h2 {
+                font: var(--title-lg);
+                color: var(--gray-100);
+                margin-bottom: 4px;
+            }
+            p {
+                font: var(--text-sm);
+                color: var(--gray-300);
+            }
+        }
+
+        .select {
+            position: relative;
+            height: fit-content;
+            width: fit-content;
+            img:nth-child(1), img:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            img:nth-child(1) {
+                width: 20px;
+                height: 20px;
+                left: 12px;
+            }
+            img:nth-child(2) {
+                width: 16px;
+                height: 16px;
+                right: 12px;
+            }
+            select {
+                cursor: pointer;
+                padding: 12px 36px 12px 40px;
+                background-color: transparent;
+                font: var(--text-md);
+                color: var(--gray-200);
+                border-radius: 8px;
+                border: 1px solid var(--gray-500);
+                
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;  
+                &:hover {
+                    border: 1px solid var(--yellow-dark);
+                    outline: none;
+                }
+
+                &:focus {
+                    border: 1px solid var(--yellow-dark);
+                    outline: 1px solid var(--yellow-dark);
+                }   
+            }
+        }
+    }
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        article {
+            border-radius: 8px;
+            border: 1px solid var(--gray-600);
+            
+            header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 20px;
+                border-bottom: 1px solid var(--gray-600);
+                h3 {
+                    margin-right: auto;
+                }
+            }
+
+            ul {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                li {
+                    display: flex;
+                    gap: 20px;
+                    padding-block: 4px;
+                    p:nth-child(1) {
+                        font: var(--title-md);
+                    }
+                    p:nth-child(2) {
+                        font: var(--text-md);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width < 1280px) {
+    .appointments {
+        width: 450px;
+        padding: 20px 10px;  
+        &>header {
+            flex-direction: column;
+            .select {
+                margin-inline: auto;
+            }
+        }  
+    }
+}

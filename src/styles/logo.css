@@ -1,0 +1,7 @@
+h1 {
+    position: fixed;
+    padding: 12px 20px;
+    background-color: var(--gray-600);
+    border-radius: 0 0 12px 0;
+    line-height: 0;
+}
