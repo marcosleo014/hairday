@@ -10,16 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HairDay</title>
 
-    <link rel="stylesheet" href="src/styles/index.css">
-    <script src="src/scripts/main.js" defer></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <h1>
-        <img src="src/assets/logo.svg" alt="">
+        <img src="./assets/logo.svg" alt="">
     </h1>
 
     <main>
@@ -41,7 +38,7 @@
                         Data
                     </label>
                     <div>
-                        <img src="src/assets/icons/calendar.svg" alt="">
+                        <img src="./assets/icons/calendar.svg" alt="">
                         <input type="date" name="appointment-date" id="appointment-date" value="2026-06-21">
                     </div>
                 </div>
@@ -54,7 +51,7 @@
                             <div>
                                 <label for="appointment-hours-09-00">
                                     09:00
-                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-09-00" value="09:00" disabled>
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-09-00" value="09:00">
                                 </label>
 
                                 <label for="appointment-hours-10-00">
@@ -73,7 +70,7 @@
                                 </label>
                             </div>
                         </section>
-                        <section>
+                        <section class="afternoon-hours">
                             <h3>Tarde</h3>
                             <div>
                                 <label for="appointment-hours-13-00">
@@ -83,7 +80,7 @@
 
                                 <label for="appointment-hours-14-00">
                                     14:00
-                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-14-00" value="14:00" disabled>
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-14-00" value="14:00">
                                 </label>
 
                                 <label for="appointment-hours-15-00">
@@ -93,7 +90,7 @@
 
                                 <label for="appointment-hours-16-00">
                                     16:00
-                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-16-00" value="16:00" disabled>
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-16-00" value="16:00">
                                 </label>
 
                                 <label for="appointment-hours-17-00">
@@ -107,7 +104,7 @@
                                 </label>
                             </div>
                         </section>
-                        <section>
+                        <section class="night-hours">
                             <h3>Noite</h3>
                             <div>
                                 <label for="appointment-hours-19-00">
@@ -117,7 +114,7 @@
 
                                 <label for="appointment-hours-20-00">
                                     20:00
-                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-20-00" value="20:00" disabled>
+                                    <input type="radio" name="appointment-hours" class="appointment-hours" id="appointment-hours-20-00" value="20:00">
                                 </label>
 
                                 <label for="appointment-hours-21-00">
@@ -134,7 +131,7 @@
                         Cliente
                     </label>
                     <div>
-                        <img src="src/assets/icons/userSquare.svg" alt="">
+                        <img src="./assets/icons/userSquare.svg" alt="">
                         <input type="text" name="name-client" id="name-client" placeholder="Nome do cliente">
                     </div>
                 </div>
@@ -156,8 +153,8 @@
                 </div>
 
                 <div class="select">
-                    <img src="src/assets/icons/calendar.svg" alt="">
-                    <img src="src/assets/icons/caretDown.svg" alt="">
+                    <img src="./assets/icons/calendar.svg" alt="">
+                    <img src="./assets/icons/caretDown.svg" alt="">
                     <select name="date-select" id="date-select">
                         <option value="2026-06-21">
                             Dom - 21/06/2026
@@ -169,23 +166,22 @@
             <div>
                 <article>
                     <header>
-                        <img src="src/assets/icons/sunHorizon.svg" alt="">
+                        <img src="./assets/icons/sunHorizon.svg" alt="">
                         <h3>Manhã</h3>
                         <p>
                             09h-12h
                         </p>
                     </header>
+
+                    <p class="empty-msg">Não há agendamentos para manhã</p>
+
                     <ul>
-                        <li>
-                            <p>09:00</p>
-                            <p>Ryan Dorwart</p>
-                        </li>
                     </ul>
                 </article>
 
                 <article>
                     <header>
-                        <img src="src/assets/icons/cloudSun.svg" alt="">
+                        <img src="./assets/icons/cloudSun.svg" alt="">
                         <h3>Tarde</h3>
                         <p>
                             13h-18h
@@ -205,7 +201,7 @@
 
                 <article>
                     <header>
-                        <img src="src/assets/icons/moonStars.svg" alt="">
+                        <img src="./assets/icons/moonStars.svg" alt="">
                         <h3>Noite</h3>
                         <p>
                             19h-21h

@@ -81,6 +81,11 @@
                 }
             }
 
+            .empty-msg {
+                padding: 20px;
+                text-align: center;
+            }
+
             ul {
                 padding: 20px;
                 display: flex;
