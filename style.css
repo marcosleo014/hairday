@@ -1,0 +1,371 @@
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/global.css ***!
+  \*************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --yellow-light: #DBC170;
+    --yellow: #B8952E;
+    --yellow-dark: #846F2E;
+    --gray-100: #F5F4F5;
+    --gray-200: #B2AFB6;
+    --gray-300: #98959D;
+    --gray-400: #7A767F;
+    --gray-500: #3E3C41;
+    --gray-600: #2E2C30;
+    --gray-700: #232225;
+    --gray-800: #19181B;
+    --gray-900: #050505;
+
+    --ff-catamaran: "Catamaran", sans-serif;
+    --title-lg: 700 24px/32px var(--ff-catamaran); 
+    --title-md: 700 16px/24px var(--ff-catamaran); 
+    --title-sm: 700 14px/20px var(--ff-catamaran); 
+    --text-md: 400 16px/24px var(--ff-catamaran); 
+    --text-sm: 400 14px/20px var(--ff-catamaran); 
+}
+
+body {
+    background-color: var(--gray-800);
+    color: var(--gray-200);
+    font-family: var(--ff-catamaran);
+}
+
+li {
+    list-style: none;
+}
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/layout.css ***!
+  \*************************************************************************/
+main {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+@media (width < 1280px) {
+    main {
+        flex-direction: column;
+        padding-top: 25px;
+        justify-content: start;
+        align-items: center;
+    }
+}
+/*!***********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/logo.css ***!
+  \***********************************************************************/
+h1 {
+    position: fixed;
+    padding: 12px 20px;
+    background-color: var(--gray-600);
+    border-radius: 0 0 12px 0;
+    line-height: 0;
+    z-index: 1;
+}
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/new-appointment.css ***!
+  \**********************************************************************************/
+.new-appointment {
+    padding: 80px;
+    border-radius: 12px;
+    width: 498px;
+    height: fit-content;
+    background-color: var(--gray-700);
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    header {
+        h2 {
+            font: var(--title-lg);
+            color: var(--gray-100);
+            margin-bottom: 4px;
+        }
+
+        p {
+            font: var(--text-sm);
+            color: var(--gray-300);
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .label {
+            font: var(--title-md);
+            color: var(--gray-200);
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        div:has(input[type="text"]),
+        div:has(input[type="date"]) {
+            position: relative;
+
+            input {
+                width: 100%;
+                padding-block: 12px;
+                padding-left: 40px;
+                background-color: inherit;
+                border-radius: 8px;
+                border: 1px solid var(--gray-500);
+                font: var(--text-md);
+                color: var(--gray-200);
+
+                &:hover {
+                    border: 1px solid var(--yellow-dark);
+                    outline: none;
+                }
+
+                &:focus {
+                    border: 1px solid var(--yellow-dark);
+                    outline: 1px solid var(--yellow-dark);
+                }
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        input[type="date"] {
+            &::-webkit-calendar-picker-indicator {
+                background-image: url(b08cfbac870b93eb35cb.svg);
+                margin-right: 12px;
+                cursor: pointer;
+            }
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        fieldset>div {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            section {
+                h3 {
+                    font: var(--text-sm);
+                    color: var(--gray-300);
+                }
+
+                &>div {
+                    display: flex;
+                    gap: 8px;
+                    flex-wrap: wrap;
+
+                    label {
+                        user-select: none;
+                        position: relative;
+                        cursor: pointer;
+                        display: inline-block;
+                        width: 78.5px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--gray-600);
+                        border-radius: 8px;
+                        border: 1px solid var(--gray-500);
+
+                        &:hover {
+                            background-color: var(--gray-500);
+                        }
+
+                        &:has(input:checked) {
+                            color: var(--yellow);
+                            border-color: var(--yellow);
+                        }
+
+                        &:has(input:disabled) {
+                            background-color: transparent;
+                            color: var(--gray-500);
+                            border-color: var(--gray-600);
+                            cursor: auto;
+                        }
+
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                            left: 0;
+                            top: 0;
+                            cursor: pointer;
+                            &:disabled {
+                                cursor: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        input[type="submit"] {
+            padding-block: 18px;
+            color: var(--gray-900);
+            font: var(--title-sm);
+            background-color: var(--yellow);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            
+            &:hover {
+                outline: 2px solid var(--yellow-light);
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                outline: none;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+@media (width < 1280px) {
+    .new-appointment {
+        padding: 40px;    
+        width: 350px;
+    }
+}
+/*!*******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/appointments.css ***!
+  \*******************************************************************************/
+.appointments {
+    width: 906px;
+    padding: 80px 112px;
+    &>header {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 32px;
+        .title {
+            margin-right: auto;
+            h2 {
+                font: var(--title-lg);
+                color: var(--gray-100);
+                margin-bottom: 4px;
+            }
+            p {
+                font: var(--text-sm);
+                color: var(--gray-300);
+            }
+        }
+
+        .select {
+            position: relative;
+            height: fit-content;
+            width: fit-content;
+            img:nth-child(1), img:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+            img:nth-child(1) {
+                width: 20px;
+                height: 20px;
+                left: 12px;
+            }
+            img:nth-child(2) {
+                width: 16px;
+                height: 16px;
+                right: 12px;
+            }
+            select {
+                cursor: pointer;
+                padding: 12px 36px 12px 40px;
+                background-color: transparent;
+                font: var(--text-md);
+                color: var(--gray-200);
+                border-radius: 8px;
+                border: 1px solid var(--gray-500);
+                
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;  
+                &:hover {
+                    border: 1px solid var(--yellow-dark);
+                    outline: none;
+                }
+
+                &:focus {
+                    border: 1px solid var(--yellow-dark);
+                    outline: 1px solid var(--yellow-dark);
+                }   
+            }
+        }
+    }
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        article {
+            border-radius: 8px;
+            border: 1px solid var(--gray-600);
+            
+            header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 20px;
+                border-bottom: 1px solid var(--gray-600);
+                h3 {
+                    margin-right: auto;
+                }
+            }
+
+            .empty-msg {
+                padding: 20px;
+                text-align: center;
+            }
+
+            ul {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                li {
+                    display: flex;
+                    gap: 20px;
+                    padding-block: 4px;
+                    p:nth-child(1) {
+                        font: var(--title-md);
+                    }
+                    p:nth-child(2) {
+                        font: var(--text-md);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width < 1280px) {
+    .appointments {
+        width: 350px;
+        padding: 20px 10px;  
+        &>header {
+            flex-direction: column;
+            .select {
+                margin-inline: auto;
+            }
+        }  
+    }
+}
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/index.css ***!
+  \************************************************************************/
+
