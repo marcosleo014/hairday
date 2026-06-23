@@ -37,7 +37,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-ext
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   apiConfig: () => (/* binding */ apiConfig)\n/* harmony export */ });\nconst apiConfig = {\r\n    baseURL: 'http://localhost:3333'\r\n}\n\n//# sourceURL=webpack:///./src/scripts/api/api-config.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   apiConfig: () => (/* binding */ apiConfig)\n/* harmony export */ });\nconst apiConfig = {\r\n    baseURL: 'https://my-json-server.typicode.com/marcosleo014/hairday'\r\n}\n\n//# sourceURL=webpack:///./src/scripts/api/api-config.js?\n}");
 
 /***/ },
 
