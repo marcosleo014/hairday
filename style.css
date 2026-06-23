@@ -142,9 +142,11 @@ h1 {
         }
 
         input[type="date"] {
+            position: relative;
             &::-webkit-calendar-picker-indicator {
                 background-image: url(b08cfbac870b93eb35cb.svg);
-                margin-right: 12px;
+                position: absolute;
+                right: 12px;
                 cursor: pointer;
             }
         }
@@ -269,23 +271,16 @@ h1 {
             position: relative;
             height: fit-content;
             width: fit-content;
-            img:nth-child(1), img:nth-child(2) {
+            img:nth-child(1) {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: -1;
-            }
-            img:nth-child(1) {
                 width: 20px;
                 height: 20px;
                 left: 12px;
             }
-            img:nth-child(2) {
-                width: 16px;
-                height: 16px;
-                right: 12px;
-            }
-            select {
+            input {
                 cursor: pointer;
                 padding: 12px 36px 12px 40px;
                 background-color: transparent;
@@ -293,10 +288,14 @@ h1 {
                 color: var(--gray-200);
                 border-radius: 8px;
                 border: 1px solid var(--gray-500);
-                
-                appearance: none;
-                -webkit-appearance: none;
-                -moz-appearance: none;  
+                position: relative;
+
+                &::-webkit-calendar-picker-indicator {
+                    background-image: url(b08cfbac870b93eb35cb.svg);
+                    position: absolute;
+                    right: 12px;
+                    cursor: pointer;
+                }  
                 &:hover {
                     border: 1px solid var(--yellow-dark);
                     outline: none;
@@ -329,6 +328,7 @@ h1 {
             }
 
             .empty-msg {
+                font: var(--text-md);
                 padding: 20px;
                 text-align: center;
             }
@@ -345,7 +345,21 @@ h1 {
                         font: var(--title-md);
                     }
                     p:nth-child(2) {
+                        flex: 1;
                         font: var(--text-md);
+                    }
+                    button {
+                        background-image: url(203c0e0505a79c509f1b.svg);
+                        background-size: contain;
+                        width: 20px;
+                        height: 20px;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        &:hover {
+                            background-image: url(3ca2a254a438493efef8.svg);
+                        }
                     }
                 }
             }
