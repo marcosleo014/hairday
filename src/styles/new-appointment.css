@@ -70,9 +70,11 @@
         }
 
         input[type="date"] {
+            position: relative;
             &::-webkit-calendar-picker-indicator {
                 background-image: url(../assets/icons/caretDown.svg);
-                margin-right: 12px;
+                position: absolute;
+                right: 12px;
                 cursor: pointer;
             }
         }

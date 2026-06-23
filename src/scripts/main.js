@@ -1,6 +1,10 @@
-// form
+// JavaScript
 import './form/validationInputsHours.js';
 import './form/submit.js';
 
-// style
-import '../styles/index.css'
+import './load.js';
+import './appointmentOperations/addAppointment.js';
+import './appointmentOperations/deleteAppointment.js';
+
+// Style CSS
+import '../styles/index.css';

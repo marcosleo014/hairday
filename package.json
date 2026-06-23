@@ -2,7 +2,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack server",
-    "server": "json-server --watch database.json --port 3333",
+    "server": "json-server --watch db.json --port 3333",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
