@@ -1,4 +1,5 @@
 import { apiConfig } from './api-config.js';
+import { toastMsg } from '../toast-notification.js'
 
 // Inserir novo agendamento no servidor
 export async function newAppointment(appointment) {
@@ -10,9 +11,10 @@ export async function newAppointment(appointment) {
             },
             body: JSON.stringify(appointment)
         });
-        console.log("Agendamento criado com sucesso:", response)
+        toastMsg('Agendamento realizado!')
     } catch (error) {
         console.log("Deu ruim demais:", error)
+        toastMsg('Erro ao realizar agendamento!')
     }
 }
 
@@ -28,7 +30,7 @@ export async function getAppointments(date) { //argumento opcional
         }
         return data
     } catch (error) {
-        console.log("Deu ruim demais:", error)
+        console.log("Deu ruim demais:", error);
     }
 }
 
@@ -38,8 +40,9 @@ export async function deleteAppointment(id) {
         const response = await fetch(`${apiConfig.baseURL}/appointments/${id}`, {
             method: 'DELETE'
         });
-        console.log('Agendamento cancelado:', response);
+        toastMsg('Agendamento cancelado!');
     } catch (error) {
         console.log('Deu ruim:'), error;
+        toastMsg('Erro ao cancelar agendamento');
     }
 }

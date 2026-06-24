@@ -1,6 +1,7 @@
 import { getAppointments } from '../api/api-operations.js';
 import dayjs from 'dayjs';
 import { addEventBtnDelete } from './deleteAppointment.js';
+import { toastMsg } from '../toast-notification.js';
 
 export const dateSelectInput = document.querySelector('#date-select');
 const listMorning = document.querySelector('.list-morning');
@@ -8,7 +9,11 @@ const listAfternoon = document.querySelector('.list-afternoon');
 const listNight = document.querySelector('.list-night');
 
 dateSelectInput.onchange = (event) => {
-    addAppointment(event.target.value);
+    try {
+        addAppointment(event.target.value);
+    } catch(error) {
+        toastMsg('Erro ao carregar agendamentos!');
+    }
 }
 
 dateSelectInput.value = dayjs().format('YYYY-MM-DD');
@@ -16,12 +21,16 @@ dateSelectInput.value = dayjs().format('YYYY-MM-DD');
 export async function addAppointment(date) {
     clearAppointmentDOM();
     const appointments = await getAppointments(date);
+    console.log(appointments)
+    // ordenação dos agendamentos com base na propriedade hour
+    appointments.sort((appointmentA, appointmentB) => appointmentA.hour > appointmentB.hour ? 1 : -1);
+    console.log(appointments)
     appointments.forEach(item => {
-        addAppointmentDOM(item)
+        addAppointmentDOM(item);
     });
     addEventBtnDelete();
     checkMsgEMpty();
-}
+};
 
 function addAppointmentDOM(appointment) {
     const li = document.createElement('li');
