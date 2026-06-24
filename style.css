@@ -391,12 +391,13 @@ h1 {
     padding: 12px;
     border-radius: 12px;
     position: fixed;
+    z-index: 2;
     right: 50%;
     top: 50px;
     transform: translateX(50%) scale(1);
     opacity: 1;
     color: var(--gray-200);
-    background-color: rgba(35, 34, 37, 0.6);
+    background-color: rgba(35, 34, 37, 0.8);
     border: 2px solid var(--yellow);
     
     transition: transform ease 350ms, opacity ease 450ms;
