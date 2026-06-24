@@ -379,6 +379,49 @@ h1 {
         }  
     }
 }
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/toast-notification.css ***!
+  \*************************************************************************************/
+.toast-notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(100%, 390px);
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    position: fixed;
+    right: 50%;
+    top: 50px;
+    transform: translateX(50%) scale(1);
+    opacity: 1;
+    color: var(--gray-200);
+    background-color: rgba(35, 34, 37, 0.6);
+    border: 2px solid var(--yellow);
+    
+    transition: transform ease 350ms, opacity ease 450ms;
+    
+    p {
+        font: var(--title-md);
+        color: var(--gray-100);
+        flex-shrink: 1;
+        text-align: center;
+    }
+    
+    button {
+        all: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.toast-off {
+    transform: translate(50%, calc(-50px - 100%)) scale(0);
+    opacity: 0;
+}
 /*!************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/index.css ***!
   \************************************************************************/
